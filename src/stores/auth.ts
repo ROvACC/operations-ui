@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+import type { User } from '@rovacc/vatsim-types';
 
 const createAuthStore = () => {
 	const { subscribe, set, update } = writable({});
@@ -6,7 +7,7 @@ const createAuthStore = () => {
 	return {
 		subscribe,
 		set,
-		login: (user) => set({ user }),
+		login: (user: User) => set({ user }),
 		logout: () => set({})
 	};
 };
