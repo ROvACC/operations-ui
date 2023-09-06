@@ -3,4 +3,4 @@
 </script>
 
 <h1>Welcome to SvelteKit</h1>
-<p>Today is {data.today}</p>
+<p>Today is {data.metar}</p>
