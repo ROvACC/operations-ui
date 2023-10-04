@@ -21,10 +21,20 @@
 	} from 'carbon-components-svelte';
 	import SettingsAdjust from 'carbon-icons-svelte/lib/SettingsAdjust.svelte';
 	import UserAvatarFilledAlt from 'carbon-icons-svelte/lib/UserAvatarFilledAlt.svelte';
+	import { auth } from '$lib/stores/auth';
+	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		auth.subscribe((user) => {
+			if (!user) {
+				goto('/login');
+			}
+		});
+	});
 
 	let isSideNavOpen = false;
 	let isOpen1 = false;
-	let isOpen2 = false;
 </script>
 
 <Header company="ROvACC" platformName="Operations" bind:isSideNavOpen>

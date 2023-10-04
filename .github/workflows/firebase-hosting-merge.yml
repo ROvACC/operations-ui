@@ -6,6 +6,11 @@ name: Deploy to Firebase Hosting on merge
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    # env:
+    #   VATSIM_API_V1_TOKEN: ${{ secrets.VATSIM_API_V1_TOKEN }}
+    #   VATSIM_API_V2_TOKEN: ${{ secrets.VATSIM_API_V2_TOKEN }}
+    #   VATSIM_CONNECT_CLIENT_ID: ${{ secrets.VATSIM_CONNECT_CLIENT_ID }}
+    #   VATSIM_CONNECT_CLIENT_SECRET: ${{ secrets.VATSIM_CONNECT_CLIENT_SECRET }}
     steps:
       - uses: actions/checkout@v3
       - run: npm ci && npm run build
